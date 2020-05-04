@@ -5,13 +5,43 @@ export class API {
   }
 
   async consultarAPI() {
-    const url = await fetch(`https://cors-anywhere.herokuapp.com/` + `https://jobs.github.com/positions.json?description=${this.descripcion}&location=${this.lugar}`);
+    let url = '';
+    url += 'https://cors-anywhere.herokuapp.com/';
+    url += 'https://jobs.github.com/positions.json?';
+    // Si se busca descripción agregarlo a la URL
+    if (descripcion !== '') {
+      url += `description=${this.descripcion}&`;
+    }
+    // Si se busca lugar agregarlo a la URL
+    if (lugar !== '') {
+      url += `location=${this.lugar}&`;
+    }
 
-    const respuesta = await url.json();
+    console.log(url);
+
+    const urlFinal = await fetch(url);
+
+    const respuesta = await urlFinal.json();
 
     return {
       respuesta
     }
+
+
+
+
+
+
+
+
+
+    // const url = await fetch(`https://cors-anywhere.herokuapp.com/` + `https://jobs.github.com/positions.json?description=${this.descripcion}&location=${this.lugar}`);
+
+    // const respuesta = await url.json();
+
+    // return {
+    //   respuesta
+    // }
   }
 }
 

@@ -102,8 +102,21 @@ h2 {
   color: white;
 }
 
-
 #resultado {
   white-space: pre-wrap;
   padding: 2rem;
+}
+
+.lista {
+  list-style: none;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #56CCF2;
+  background: rgb(219, 246, 255);
+}
+
+.lista li:last-child {
+  margin: 0;
 }
