@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Github Jobs: Trabajos en el mundo tecnologico</title>
+
+  <link href="https://bootswatch.com/4/sandstone/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -13,31 +15,26 @@
 </head>
 
 <body>
+  <header>
+    <img src="img/logo white.png" alt="Logo">
+  </header>
 
-  <main id="contenido" class="contenido">
-    <h1>GitHub Jobs</h1>
-    <div class="contenedor">
+  <main id="contenido" class="row justify-content-center">
+
+    <div class="contenido col-10 col-md-8">
       <div id="buscar" class="buscar">
-        <h2>Búsqueda</h2>
 
-        <p><span> * </span>Obligatorio</p>
         <form action="#" id="formulario-buscar">
 
           <div class="input">
-            <label for="descripcion">Descripción: <span>*</span></label>
+            <label for="descripcion">Descripción: </label>
             <input type="text" id="descripcion" placeholder="Puesto de trabajo">
           </div>
 
           <div class="input">
-            <label for="lugar">Lugar: <span>*</span></label>
+            <label for="lugar">Lugar: </label>
             <input type="text" id="lugar" placeholder="Ubicación del trabajo">
           </div>
-
-          <!-- <div class="input">
-            <label for="fulltime">Fulltime</label>
-            <input type="checkbox" id="fulltime" name="fulltime" value="true">
-
-          </div> -->
 
           <div class="input enviar">
             <input type="submit" value="Buscar">
@@ -46,10 +43,24 @@
           <div id="mensajes"></div>
         </form>
       </div>
+
+      <!-- Abajo se imprime la consulta -->
       <div class="trabajo-resultado">
-        <h2>Resultado</h2>
-        <div id="resultado"></div>
+
+        <div id="cargando">
+          <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+          </div>
+        </div>
+
+        <div class="row" id="resultado">
+
+          <!-- Aquí se imprimen las cards de trabajo -->
+
+        </div>
       </div>
+
     </div>
   </main>
 

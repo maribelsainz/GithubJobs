@@ -47,10 +47,6 @@ h2 {
   text-align: center;
 }
 
-.formulario-busqueda span {
-  color: red;
-}
-
 .input {
   margin-bottom: 1rem;
   display: flex;
@@ -79,6 +75,7 @@ h2 {
 .enviar {
   text-align: right;
   justify-content: flex-end !important;
+
 }
 
 .input input[type="submit"] {
@@ -100,23 +97,106 @@ h2 {
   border: 1px solid red;
   background-color: rgb(249, 121, 121);
   color: white;
+  margin-bottom: 15px;
 }
 
-#resultado {
-  white-space: pre-wrap;
-  padding: 2rem;
+article p span {
+  font-weight: bold;
+  color: blue;
+  font-size: 14px;
 }
 
-.lista {
-  list-style: none;
-  width: 80%;
+h4 {
+  font-weight: bold;
+}
+
+h4 span {
+  font-weight: lighter;
+  color: #6e7d80;
+}
+
+header {
+  margin-left: 33%;
+  padding: 20px 0 20px 0;
+}
+
+header img {
+  width: 50%;
   text-align: center;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #56CCF2;
-  background: rgb(219, 246, 255);
 }
 
-.lista li:last-child {
-  margin: 0;
+#cargando {
+  display: none;
+  margin: 0 auto;
+}
+
+/* spinner */
+.spinner {
+  margin: 80px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1,
+.cube2 {
+  background-color: #6f86d6;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+  }
+
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+  }
+
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg)
+  }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
 }

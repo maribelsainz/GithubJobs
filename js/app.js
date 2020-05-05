@@ -41,21 +41,37 @@ UI.formularioBuscar.addEventListener('submit', (e) => {
             UI.formularioBuscar.reset();
           }, 3000);
         } else {
-          // El trabajo existe: Se recorre el arreglo y luego se imprime.
 
-          let html = `<ul class="lista">`;
+          // El trabajo existe: Se recorre el arreglo y luego se imprime.
+          let html = "";
           data.respuesta.forEach(trabajo => {
-            console.log(trabajo.company)
+
+            // console.log(trabajo.company)
+            // Se transforma fecha para agregar en los template literals:
+            let fecha = new Date(trabajo.created_at).toLocaleDateString('es-CL');
+
             html += `
-              <li>Empresa: ${trabajo.company}</li>
-              <li>Puesto: ${trabajo.title}</li>
-              <li>Modalidad: ${trabajo.type}</li>
-              <li>Ubicación: ${trabajo.location}</li>
-              <li>Publicación: ${trabajo.created_at}</li>
+
+          <article class="col-md-12">
+            <div class="card border-primary mb-3" style="max-width: 60rem;">
+              <div class="card-header">${fecha}</div>
+              <div class="card-body">
+                <h4 class="card-title">${trabajo.title}  <span>${trabajo.type}</span></h4>
+                <p class="card-text">${trabajo.company}  <span>${trabajo.location}</span></p>
+              </div>
+            </div>
+          </article>
+
           `;
+
+            const spinner = document.querySelector('#cargando');
+            spinner.style.display = 'block';
+            setTimeout(function () {
+              spinner.style.display = 'none';
+              UI.divResultado.innerHTML = html;
+            }, 3000);
           })
-          html += `</ul>`
-          UI.divResultado.innerHTML = html;
+
         }
       })
       .catch(error => {
