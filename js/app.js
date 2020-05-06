@@ -52,15 +52,17 @@ UI.formularioBuscar.addEventListener('submit', (e) => {
 
             html += `
 
+          <a class="resultado__descripcion" href="${trabajo.url}" target="_blank">
           <article class="col-md-12">
             <div class="card border-primary mb-3" style="max-width: 60rem;">
               <div class="card-header">${fecha}</div>
               <div class="card-body">
-                <h4 class="card-title">${trabajo.title}  <span>${trabajo.type}</span></h4>
-                <p class="card-text">${trabajo.company}  <span>${trabajo.location}</span></p>
+                <h4 class="card-title">${trabajo.title} <span>${trabajo.type}</span></h4>
+                <p class="card-text">${trabajo.company} <span>${trabajo.location}</span></p>
               </div>
             </div>
           </article>
+        </a>
 
           `;
 

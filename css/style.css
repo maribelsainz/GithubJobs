@@ -32,17 +32,6 @@ h2 {
   padding: 20px;
 }
 
-
-@media (min-width:768px) {
-  .contenedor {
-    display: flex;
-  }
-
-  .contenedor>div {
-    flex: 1 0 50%;
-  }
-}
-
 .formulario-busqueda p {
   text-align: center;
 }
@@ -128,6 +117,27 @@ header img {
 #cargando {
   display: none;
   margin: 0 auto;
+}
+
+.resultado__descripcion {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin: 2% 0;
+  padding: 2%;
+  width: 900px;
+  box-shadow: 5px 5px 3px #dadada;
+}
+
+.resultado__descripcion:hover {
+  text-decoration: none;
+  color: black;
+  box-shadow: 8px 8px 5px #c2c2c2;
+}
+
+#resultado {
+  align-items: center;
 }
 
 /* spinner */
